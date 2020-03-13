@@ -362,7 +362,7 @@ class HostTunnelDefinitions(ConfigurationInterface):
             cmd += 'sshpass -p "%s" ' % self.remote_password
 
         if forwarding.use_autossh:
-            cmd += "autossh -M 0 -N -f -o 'PubkeyAuthentication=yes' -nT " + args
+            cmd += "autossh -M 0 -N -f -o 'PubkeyAuthentication=yes' -o 'ConnectTimeout 10' -nT " + args
         else:
             cmd += 'ssh -N -T ' + args
 
