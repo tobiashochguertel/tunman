@@ -364,6 +364,6 @@ class HostTunnelDefinitions(ConfigurationInterface):
         if forwarding.use_autossh:
             cmd += "autossh -M 0 -N -f -o 'PubkeyAuthentication=yes' -nT " + args
         else:
-            cmd += 'ssh -N -T ' + args
+            cmd += 'ssh -T ' + args
 
         return cmd
